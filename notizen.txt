@@ -1,0 +1,21 @@
+Inhalt des Editorfensters setzen:
+
+jQuery("textarea#content").val("Hallo du paddel")
+tinymce.get(tinymce.editors[0].id).setContent("moin du")
+
+--> nur html reinsetzen, das vom editor so benutzt würde. Also STRONG und nicht B
+
+----------------
+Metaboxen fügt man so hinzu:
+http://wptheming.com/2010/08/custom-metabox-for-post-type/
+
+-------------------
+Etherpad-inhalt holt man sich so:
+
+curl "http://d2ns.org/pad/p/apitest/export/html" --referer "http://d2ns.org/pad/p/apitest" -v --cookie "express_sid=s%3AcQc4uchHgiUAGDBc6ueeWpi2.6xYOOXrh2KTGLUf7Abey3Blx%2Fd%2B%2FB5UiX%2FebxrQ3kB0; token=t.3Mez5IWK0ikE9RQd6f4t"
+
+wobei das token völlig egal ist, da es eh vom benutzer erzeugt wird (soweit ich weiß)
+
+--> wäre gut, wenn man 2 methoden anbietet: Import von Markdown und Import als HTML.
+	-> Beim Markdown müsste man das in html übersetzen und spezialitäten beachten. außerdem nur die html einheiten s.o. benutzen
+	-> beim HTML muss man filtern /ersetzen, damit man nur die dinge benutzt, die tinymce auch versteht.
